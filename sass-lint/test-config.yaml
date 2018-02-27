@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+  
+commandTests:
+  - name: "sass-lint version"
+    command: "sass-lint"
+    args: ["-v"]
+    expectedOutput: ["1.12.1"]
