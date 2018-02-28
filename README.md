@@ -7,8 +7,12 @@ for the following linters:
 
 - [CoffeeLint](http://www.coffeelint.org) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-coffeelint/)
+- [ESLint](https://eslint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-eslint/)
 - [HAML-Lint](https://github.com/brigade/haml-lint) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-haml-lint/)
+- [PyLint](https://www.pylint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-pylint/)
 - [RuboCop](http://batsov.com/rubocop/) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-rubocop/)
 - [Sass Lint](https://www.npmjs.com/package/sass-lint) -
@@ -90,6 +94,20 @@ docker run -v `pwd`:/app cozero/linter-coffeelint
 
 Note that all linters expect the project code to be linted to be available
 at the path `/app` (as per command above).
+
+### pylint
+
+One of the linters is a bit special and needs to be run in a slightly different
+way. You guessed it, no prizes: pylint. (There's always one, isn't there...)
+The difference is that pylint needs to have a module or package specified
+rather than just pointing at a directory in the filesystem. Therefore, you
+need to supply that module as an argument when you run the linter image.
+
+For example, for a package named `foo.bar`:
+
+```
+docker run -v `pwd`:/app cozero/linter-pylint foo.bar
+```
 
 ## Deployment
 

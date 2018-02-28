@@ -1,7 +1,13 @@
 schemaVersion: "2.0.0"
   
 commandTests:
-  - name: "eslint version"
-    command: "eslint"
+  - name: "pylint version"
+    command: "pylint"
     args: ["-v"]
     expectedOutput: ["4.18.1"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/eslint.sh'
+  shouldExist: true
+  permissions: '-rwxr-xr-x'
