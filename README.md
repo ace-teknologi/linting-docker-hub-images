@@ -21,7 +21,6 @@ for the following linters:
 Each linter's Dockerfile is housed, along with some other resources (e.g. entry
 point script, default config) in its own directory within this repository.
 From these directories, Docker images are built and uploaded to Docker Hub.
-(TODO: links to images on Docker Hub.)
 
 ## Requirements
 
