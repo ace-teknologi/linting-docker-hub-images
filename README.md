@@ -36,60 +36,21 @@ Docker image (for all platforms).
 
 ## Building the images
 
-The process is the same for each of the linters. Using CoffeeLint as an example:
+The process is the same for each of the linters. Using ESLint as an example:
 
 ```
-cd coffeelint 
-docker build --rm -t cozero/linter-coffeelint .
+cd eslint 
+docker build --rm -t cozero/linter-eslint .
 ```
 
-## Running the tests 
-
-Again, each linter can be tested in a similar way. You'll need to
-[build the images](#building-the-images) before you can test them.
-
-Once you've built the images, here are the steps, using CoffeeLint as an
-example.
-
-### On Linux
-
-If you are on Linux, first ensure that you have installed the Container
-Structure Tests binary to a location on your $PATH. Then:
-
-```
-cd coffeelint
-structure-test -test.v -image cozero/linter-coffeelint test-config.yaml
-```
-
-### Non Linux
-
-If you are not running Linux, the command to run is a little more complicated,
-as you have to use the Container Structure Tests container. As this is
-Docker-in-Docker, you'll need to ensure that the container has access to your
-Docker client so it can run the linter image. These commands work on a Mac
-(note that this has not been tested on Windows, and Linux users should use the
-[Linux instructions](#on-linux) above):
-
-```
-cd coffeelint
-docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
-  gcr.io/gcp-runtimes/container-structure-test -test.v \
-  -image cozero/linter-coffeelint /test/test-config.yaml
-```
-
-### CI/CD
-
-This is currently TODO. I haven't yet been able to get the tests to run on 
-a BuildKite agent. See (TODO section)[#todo] below.
-
-## Using the linters 
+## Running the linters 
 
 To run a linter on your project, you'll first need to
 (build the linter image)[#building-the-images] and then, from your project
 root:
 
 ```
-docker run -v `pwd`:/app cozero/linter-coffeelint
+docker run -v `pwd`:/app cozero/linter-eslint
 ```
 
 Note that all linters expect the project code to be linted to be available
@@ -108,6 +69,45 @@ For example, for a package named `foo.bar`:
 ```
 docker run -v `pwd`:/app cozero/linter-pylint foo.bar
 ```
+
+## Testing the containers
+
+Again, each linter can be tested in a similar way. You'll need to
+[build the images](#building-the-images) before you can test them.
+
+Once you've built the images, here are the steps, using ESLint as an
+example:
+
+### On Linux
+
+If you are on Linux, first ensure that you have installed the Container
+Structure Tests binary to a location on your $PATH. Then:
+
+```
+cd eslint
+structure-test -test.v -image cozero/linter-eslint test-config.yaml
+```
+
+### Non Linux
+
+If you are not running Linux, the command to run is a little more complicated,
+as you have to use the Container Structure Tests container. As this is
+Docker-in-Docker, you'll need to ensure that the container has access to your
+Docker client so it can run the linter image. These commands work on a Mac
+(note that this has not been tested on Windows, and Linux users should use the
+[Linux instructions](#on-linux) above):
+
+```
+cd eslint
+docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
+  gcr.io/gcp-runtimes/container-structure-test -test.v \
+  -image cozero/linter-eslint /test/test-config.yaml
+```
+
+### CI/CD
+
+This is currently TODO. I haven't yet been able to get the tests to run on 
+a BuildKite agent. See (TODO section)[#todo] below.
 
 ## Deployment
 
