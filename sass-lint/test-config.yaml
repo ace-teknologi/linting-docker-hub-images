@@ -5,3 +5,9 @@ commandTests:
     command: "sass-lint"
     args: ["-v"]
     expectedOutput: ["1.12.1"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/sass-lint.sh'
+  shouldExist: true
+  permissions: '-rwxr-xr-x'

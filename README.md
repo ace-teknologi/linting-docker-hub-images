@@ -7,8 +7,14 @@ for the following linters:
 
 - [CoffeeLint](http://www.coffeelint.org) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-coffeelint/)
+- [ESLint](https://eslint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-eslint/)
 - [HAML-Lint](https://github.com/brigade/haml-lint) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-haml-lint/)
+- [PyLint (python2)](https://www.pylint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python2-pylint/)
+- [PyLint (python3)](https://www.pylint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python3-pylint/)
 - [RuboCop](http://batsov.com/rubocop/) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-rubocop/)
 - [Sass Lint](https://www.npmjs.com/package/sass-lint) -
@@ -17,7 +23,6 @@ for the following linters:
 Each linter's Dockerfile is housed, along with some other resources (e.g. entry
 point script, default config) in its own directory within this repository.
 From these directories, Docker images are built and uploaded to Docker Hub.
-(TODO: links to images on Docker Hub.)
 
 ## Requirements
 
@@ -32,20 +37,48 @@ Docker image (for all platforms).
 
 ## Building the images
 
-The process is the same for each of the linters. Using CoffeeLint as an example:
+The process is the same for each of the linters. Using ESLint as an example:
 
 ```
-cd coffeelint 
-docker build --rm -t cozero/linter-coffeelint .
+cd eslint 
+docker build --rm -t cozero/linter-eslint .
 ```
 
-## Running the tests 
+## Running the linters 
+
+To run a linter on your project, you'll first need to
+(build the linter image)[#building-the-images] and then, from your project
+root:
+
+```
+docker run -v `pwd`:/app cozero/linter-eslint
+```
+
+Note that all linters expect the project code to be linted to be available
+at the path `/app` (as per command above).
+
+### pylint
+
+One caveat: because of the way Pylint works, both Pylint containers (i.e. for
+Python 2 and for Python 3) need an extra argument to run the linter. The 
+difference is that Pylint requires either a module or package to be specified,
+or a file or directory containing such. 
+
+For example, if your project's base package is called `foo` and there is an
+`__init__.py` file in the subdirectory `foo` off the project root directory, 
+you would need to invoke the linter thus:
+
+```
+docker run -v `pwd`:/app cozero/linter-python3-pylint foo
+```
+
+## Testing the containers
 
 Again, each linter can be tested in a similar way. You'll need to
 [build the images](#building-the-images) before you can test them.
 
-Once you've built the images, here are the steps, using CoffeeLint as an
-example.
+Once you've built the images, here are the steps, using ESLint as an
+example:
 
 ### On Linux
 
@@ -53,8 +86,8 @@ If you are on Linux, first ensure that you have installed the Container
 Structure Tests binary to a location on your $PATH. Then:
 
 ```
-cd coffeelint
-structure-test -test.v -image cozero/linter-coffeelint test-config.yaml
+cd eslint
+structure-test -test.v -image cozero/linter-eslint test-config.yaml
 ```
 
 ### Non Linux
@@ -67,29 +100,16 @@ Docker client so it can run the linter image. These commands work on a Mac
 [Linux instructions](#on-linux) above):
 
 ```
-cd coffeelint
+cd eslint
 docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
   gcr.io/gcp-runtimes/container-structure-test -test.v \
-  -image cozero/linter-coffeelint /test/test-config.yaml
+  -image cozero/linter-eslint /test/test-config.yaml
 ```
 
 ### CI/CD
 
 This is currently TODO. I haven't yet been able to get the tests to run on 
 a BuildKite agent. See (TODO section)[#todo] below.
-
-## Using the linters 
-
-To run a linter on your project, you'll first need to
-(build the linter image)[#building-the-images] and then, from your project
-root:
-
-```
-docker run -v `pwd`:/app cozero/linter-coffeelint
-```
-
-Note that all linters expect the project code to be linted to be available
-at the path `/app` (as per command above).
 
 ## Deployment
 
@@ -98,12 +118,6 @@ Docker CLI's `docker push`
 (command)[https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html].
 
 ## TODO
-
-### Set up CI/CD pipeline
-
-Ideally, on every `git push` to the repo, the pipeline would build the images
-and run the tests against them. Additionally, on the master branch - if the
-tests pass - the pipeline should `docker push` the images to Docker Hub.
 
 ### Improve tests
 

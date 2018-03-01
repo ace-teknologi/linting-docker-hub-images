@@ -5,3 +5,9 @@ commandTests:
     command: "haml-lint"
     args: ["-v"]
     expectedOutput: ["0.27.0"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/haml-lint.sh'
+  shouldExist: true
+  permissions: '-rwxr-xr-x'

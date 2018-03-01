@@ -5,3 +5,9 @@ commandTests:
     command: "rubocop"
     args: ["-v"]
     expectedOutput: ["0.52.1"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/rubocop.sh'
+  shouldExist: true
+  permissions: '-rwxr-xr-x'
