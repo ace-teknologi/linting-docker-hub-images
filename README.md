@@ -11,8 +11,10 @@ for the following linters:
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-eslint/)
 - [HAML-Lint](https://github.com/brigade/haml-lint) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-haml-lint/)
-- [PyLint](https://www.pylint.org) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-pylint/)
+- [PyLint (python2)](https://www.pylint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python2-pylint/)
+- [PyLint (python3)](https://www.pylint.org) -
+[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python3-pylint/)
 - [RuboCop](http://batsov.com/rubocop/) -
 [Docker Hub repo](https://hub.docker.com/r/cozero/linter-rubocop/)
 - [Sass Lint](https://www.npmjs.com/package/sass-lint) -
@@ -57,16 +59,17 @@ at the path `/app` (as per command above).
 
 ### pylint
 
-One of the linters is a bit special and needs to be run in a slightly different
-way. You guessed it, no prizes: pylint. (There's always one, isn't there...)
-The difference is that pylint needs to have a module or package specified
-rather than just pointing at a directory in the filesystem. Therefore, you
-need to supply that module as an argument when you run the linter image.
+One caveat: because of the way Pylint works, both Pylint containers (i.e. for
+Python 2 and for Python 3) need an extra argument to run the linter. The 
+difference is that Pylint requires either a module or package to be specified,
+or a file or directory containing such. 
 
-For example, for a package named `foo.bar`:
+For example, if your project's base package is called `foo` and there is an
+`__init__.py` file in the subdirectory `foo` off the project root directory, 
+you would need to invoke the linter thus:
 
 ```
-docker run -v `pwd`:/app cozero/linter-pylint foo.bar
+docker run -v `pwd`:/app cozero/linter-python3-pylint foo
 ```
 
 ## Testing the containers
@@ -115,12 +118,6 @@ Docker CLI's `docker push`
 (command)[https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html].
 
 ## TODO
-
-### Set up CI/CD pipeline
-
-Ideally, on every `git push` to the repo, the pipeline would build the images
-and run the tests against them. Additionally, on the master branch - if the
-tests pass - the pipeline should `docker push` the images to Docker Hub.
 
 ### Improve tests
 
