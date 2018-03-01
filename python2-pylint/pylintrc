@@ -1,4 +1,4 @@
-# This file should contain any COzero defaults that differ from ESLint's standard config.
+# This file should contain any COzero defaults that differ from Pylint's standard config.
 
 [MASTER]
 
