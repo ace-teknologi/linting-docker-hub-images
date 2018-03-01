@@ -5,20 +5,13 @@ Docker containers to play host to all the various linting tools.
 This repository houses a set of Dockerfiles and associated scripts and configs,
 for the following linters: 
 
-- [CoffeeLint](http://www.coffeelint.org) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-coffeelint/)
-- [ESLint](https://eslint.org) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-eslint/)
-- [HAML-Lint](https://github.com/brigade/haml-lint) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-haml-lint/)
-- [PyLint (python2)](https://www.pylint.org) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python2-pylint/)
-- [PyLint (python3)](https://www.pylint.org) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-python3-pylint/)
-- [RuboCop](http://batsov.com/rubocop/) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-rubocop/)
-- [Sass Lint](https://www.npmjs.com/package/sass-lint) -
-[Docker Hub repo](https://hub.docker.com/r/cozero/linter-sass-lint/)
+- [![linter-coffeelint build status](https://img.shields.io/docker/build/cozero/linter-coffeelint.svg)](https://hub.docker.com/r/cozero/linter-coffeelint/)  [CoffeeLint](http://www.coffeelint.org)
+- [![linter-eslint build status](https://img.shields.io/docker/build/cozero/linter-eslint.svg)](https://hub.docker.com/r/cozero/linter-eslint/)  [ESLint](https://eslint.org)
+- [![linter-haml-lint build status](https://img.shields.io/docker/build/cozero/linter-haml-lint.svg)](https://hub.docker.com/r/cozero/linter-haml-lint/)  [HAML-Lint](https://github.com/brigade/haml-lint)
+- [![linter-python2-pylint build status](https://img.shields.io/docker/build/cozero/linter-python2-pylint.svg)](https://hub.docker.com/r/cozero/linter-python2-pylint/)  [PyLint (python2)](https://www.pylint.org)
+- [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
+- [![linter-rubocop build status](https://img.shields.io/docker/build/cozero/linter-rubocop.svg)](https://hub.docker.com/r/cozero/linter-rubocop/)  [RuboCop](http://batsov.com/rubocop/)
+- [![linter-sass-lint build status](https://img.shields.io/docker/build/cozero/linter-sass-lint.svg)](https://hub.docker.com/r/cozero/linter-sass-lint/)  [Sass Lint](https://www.npmjs.com/package/sass-lint)
 
 Each linter's Dockerfile is housed, along with some other resources (e.g. entry
 point script, default config) in its own directory within this repository.
