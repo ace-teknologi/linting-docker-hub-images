@@ -1,5 +1,7 @@
 # Linting Docker Hub Images
 
+[![Build Status](https://travis-ci.org/COzero/linting-docker-hub-images.svg?branch=master)](https://travis-ci.org/COzero/linting-docker-hub-images)
+
 Docker containers to play host to all the various linting tools.
 
 This repository houses a set of Dockerfiles and associated scripts and configs,
@@ -98,11 +100,6 @@ docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
   gcr.io/gcp-runtimes/container-structure-test -test.v \
   -image cozero/linter-eslint /test/test-config.yaml
 ```
-
-### CI/CD
-
-This is currently TODO. I haven't yet been able to get the tests to run on 
-a BuildKite agent. See (TODO section)[#todo] below.
 
 ## Deployment
 

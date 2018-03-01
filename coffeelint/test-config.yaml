@@ -10,4 +10,4 @@ fileExistenceTests:
 - name: 'linter script'
   path: '/coffeelint.sh'
   shouldExist: true
-  permissions: '-rwxr-xr-x'
+  permissions: '-rwxrwxr-x'

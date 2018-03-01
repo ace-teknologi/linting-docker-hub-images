@@ -10,4 +10,4 @@ fileExistenceTests:
 - name: 'linter script'
   path: '/haml-lint.sh'
   shouldExist: true
-  permissions: '-rwxr-xr-x'
+  permissions: '-rwxrwxr-x'

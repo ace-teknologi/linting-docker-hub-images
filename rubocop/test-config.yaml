@@ -10,4 +10,4 @@ fileExistenceTests:
 - name: 'linter script'
   path: '/rubocop.sh'
   shouldExist: true
-  permissions: '-rwxr-xr-x'
+  permissions: '-rwxrwxr-x'
