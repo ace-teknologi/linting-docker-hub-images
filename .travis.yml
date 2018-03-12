@@ -2,14 +2,14 @@
 
 language: generic
 
-services: 
+services:
   - docker
 
-install: 
+install:
   - wget https://storage.googleapis.com/container-structure-test/latest/container-structure-test
   - chmod +x container-structure-test
 
-script: 
+script:
   - docker build --rm -t cozero/linter-coffeelint coffeelint
   - ./container-structure-test -test.v -image cozero/linter-coffeelint coffeelint/test-config.yaml
   - docker build --rm -t cozero/linter-eslint eslint
@@ -24,3 +24,7 @@ script:
   - ./container-structure-test -test.v -image cozero/linter-rubocop rubocop/test-config.yaml
   - docker build --rm -t cozero/linter-sass-lint sass-lint
   - ./container-structure-test -test.v -image cozero/linter-sass-lint sass-lint/test-config.yaml
+  - docker build --rm -t cozero/linter-stylelint stylelint
+  - ./container-structure-test -test.v -image cozero/linter-stylelint stylelint/test-config.yaml
+  - docker build --rm -t cozero/linter-htmlhint htmlhint
+  - ./container-structure-test -test.v -image cozero/linter-htmlhint htmlhint/test-config.yaml

@@ -1,0 +1,13 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "htmlhint version"
+    command: "/linter/node_modules/.bin/htmlhint"
+    args: ["--version"]
+    expectedOutput: ["0.9.13"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/linter/htmlhint.sh'
+  shouldExist: true
+  permissions: '-rwxrwxr-x'
