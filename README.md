@@ -14,6 +14,8 @@ for the following linters:
 - [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
 - [![linter-rubocop build status](https://img.shields.io/docker/build/cozero/linter-rubocop.svg)](https://hub.docker.com/r/cozero/linter-rubocop/)  [RuboCop](http://batsov.com/rubocop/)
 - [![linter-sass-lint build status](https://img.shields.io/docker/build/cozero/linter-sass-lint.svg)](https://hub.docker.com/r/cozero/linter-sass-lint/)  [Sass Lint](https://www.npmjs.com/package/sass-lint)
+- [![linter-stylelint build status](https://img.shields.io/docker/build/cozero/linter-stylelint.svg)](https://hub.docker.com/r/cozero/linter-stylelint/)  [Stylelint](https://github.com/stylelint/stylelint)
+- [![linter-html-hint build status](https://img.shields.io/docker/build/cozero/linter-html-hint.svg)](https://hub.docker.com/r/cozero/linter-html-hint/)  [Html Hint](https://github.com/yaniswang/HTMLHint)
 
 Each linter's Dockerfile is housed, along with some other resources (e.g. entry
 point script, default config) in its own directory within this repository.
