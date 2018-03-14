@@ -1,0 +1,14 @@
+{
+  "name": "htmlhinter",
+  "version": "1.0.0",
+  "description": "Dockerised HTMLHint",
+  "author": "jnagel@cozero.com.au",
+  "license": "ISC",
+  "dependencies": {
+    "htmlhint": "^0.9.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:COzero/linting-docker-hub-images.git"
+  }
+}

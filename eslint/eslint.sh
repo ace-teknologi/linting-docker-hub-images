@@ -4,7 +4,8 @@ set -euo pipefail
 
 echo "--- :eslint: ESLint JavaScript linting"
 
-CMD=/usr/local/bin/eslint 
+CMD=/linter/node_modules/.bin/eslint
+CONFIG=""
 
 if [ -e .eslintrc.js ] \
     || [ -e .eslintrc.json ] \
@@ -14,9 +15,19 @@ if [ -e .eslintrc.js ] \
     || grep --quiet eslintConfig package.json
 then
   echo "--- :eslint: found project config"
-  $CMD --ext .jsx,.js .
 else
-  $CMD -c /.eslintrc.yaml --ext .jsx,.js .
+  echo "--- :eslint: using default config"
+  CONFIG="-c /linter/.eslintrc.yaml"
 fi
+
+if [ "$#" -gt 0 ]; then
+  ARGS=$@
+else
+  ARGS="--ext .jsx,.js ."
+fi
+
+echo "Let's do this! Linting these files: $ARGS"
+
+$CMD $CONFIG $ARGS
 
 echo "👌 LGTM!"

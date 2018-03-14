@@ -1,0 +1,27 @@
+{
+  "name": "eslinter",
+  "version": "1.0.0",
+  "description": "Dockerised eslint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/COzero/linting-docker-hub-images.git"
+  },
+  "author": "Josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COzero/linting-docker-hub-images/issues"
+  },
+  "homepage": "https://github.com/COzero/linting-docker-hub-images#readme",
+  "dependencies": {
+    "ajv": "^6.2.1",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
