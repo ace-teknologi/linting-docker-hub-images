@@ -11,20 +11,20 @@ install:
 
 script:
   - docker build --rm -t cozero/linter-coffeelint coffeelint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-coffeelint /src/coffeelint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-coffeelint /src/coffeelint/test-config.yaml
   - docker build --rm -t cozero/linter-eslint eslint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-eslint /src/eslint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-eslint /src/eslint/test-config.yaml
   - docker build --rm -t cozero/linter-haml-lint haml-lint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-haml-lint /src/haml-lint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-haml-lint /src/haml-lint/test-config.yaml
   - docker build --rm -t cozero/linter-python2-pylint python2-pylint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-python2-pylint /src/python2-pylint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-python2-pylint /src/python2-pylint/test-config.yaml
   - docker build --rm -t cozero/linter-python3-pylint python3-pylint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-python3-pylint /src/python3-pylint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-python3-pylint /src/python3-pylint/test-config.yaml
   - docker build --rm -t cozero/linter-rubocop rubocop
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-rubocop /src/rubocop/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-rubocop /src/rubocop/test-config.yaml
   - docker build --rm -t cozero/linter-sass-lint sass-lint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-sass-lint /src/sass-lint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-sass-lint /src/sass-lint/test-config.yaml
   - docker build --rm -t cozero/linter-stylelint stylelint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-stylelint /src/stylelint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-stylelint /src/stylelint/test-config.yaml
   - docker build --rm -t cozero/linter-htmlhint htmlhint
-  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v0.3.0 -test.v -image cozero/linter-htmlhint /src/htmlhint/test-config.yaml
+  - docker run --rm -i -v ${PWD}:/src:ro gcr.io/gcp-runtimes/container-structure-test:v1.1.0 -test.v -image cozero/linter-htmlhint /src/htmlhint/test-config.yaml
