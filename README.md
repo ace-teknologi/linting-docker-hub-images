@@ -108,7 +108,7 @@ docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
 
 Once the images are built, they can be deployed to Docker Hub using the
 Docker CLI's `docker push`
-(command)[https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html].
+[command](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html).
 
 ## TODO
 
