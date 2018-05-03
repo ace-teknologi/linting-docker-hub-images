@@ -1,0 +1,13 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "markdownlint-cli version"
+    command: "/linter/node_modules/.bin/markdownlint-cli"
+    args: ["-v"]
+    expectedOutput: ["0.8.1"]
+
+fileExistenceTests:
+- name: 'linter script'
+  path: '/linter/markdownlint.sh'
+  shouldExist: true
+  permissions: '-rwxrwxr-x'

@@ -1,0 +1,22 @@
+{
+  "name": "markdownlint-cli",
+  "version": "1.0.0",
+  "description": "Dockerised markdownlint-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/COzero/linting-docker-hub-images.git"
+  },
+  "author": "Joel Courtney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COzero/linting-docker-hub-images/issues"
+  },
+  "homepage": "https://github.com/COzero/linting-docker-hub-images#readme",
+  "dependencies": {
+    "markdownlint-cli": "^0.8.1"
+  }
+}

@@ -5,17 +5,18 @@
 Docker containers to play host to all the various linting tools.
 
 This repository houses a set of Dockerfiles and associated scripts and configs,
-for the following linters: 
+for the following linters:
 
 - [![linter-coffeelint build status](https://img.shields.io/docker/build/cozero/linter-coffeelint.svg)](https://hub.docker.com/r/cozero/linter-coffeelint/)  [CoffeeLint](http://www.coffeelint.org)
 - [![linter-eslint build status](https://img.shields.io/docker/build/cozero/linter-eslint.svg)](https://hub.docker.com/r/cozero/linter-eslint/)  [ESLint](https://eslint.org)
 - [![linter-haml-lint build status](https://img.shields.io/docker/build/cozero/linter-haml-lint.svg)](https://hub.docker.com/r/cozero/linter-haml-lint/)  [HAML-Lint](https://github.com/brigade/haml-lint)
+- [![linter-html-hint build status](https://img.shields.io/docker/build/cozero/linter-html-hint.svg)](https://hub.docker.com/r/cozero/linter-html-hint/)  [Html Hint](https://github.com/yaniswang/HTMLHint)
+- [![linter-markdownlint build status](https://img.shields.io/docker/build/cozero/linter-markdownlint.svg)](https://hub.docker.com/r/cozero/linter-markdownlint/)  [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [![linter-python2-pylint build status](https://img.shields.io/docker/build/cozero/linter-python2-pylint.svg)](https://hub.docker.com/r/cozero/linter-python2-pylint/)  [PyLint (python2)](https://www.pylint.org)
 - [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
 - [![linter-rubocop build status](https://img.shields.io/docker/build/cozero/linter-rubocop.svg)](https://hub.docker.com/r/cozero/linter-rubocop/)  [RuboCop](http://batsov.com/rubocop/)
 - [![linter-sass-lint build status](https://img.shields.io/docker/build/cozero/linter-sass-lint.svg)](https://hub.docker.com/r/cozero/linter-sass-lint/)  [Sass Lint](https://www.npmjs.com/package/sass-lint)
 - [![linter-stylelint build status](https://img.shields.io/docker/build/cozero/linter-stylelint.svg)](https://hub.docker.com/r/cozero/linter-stylelint/)  [Stylelint](https://github.com/stylelint/stylelint)
-- [![linter-html-hint build status](https://img.shields.io/docker/build/cozero/linter-html-hint.svg)](https://hub.docker.com/r/cozero/linter-html-hint/)  [Html Hint](https://github.com/yaniswang/HTMLHint)
 
 Each linter's Dockerfile is housed, along with some other resources (e.g. entry
 point script, default config) in its own directory within this repository.
@@ -37,11 +38,11 @@ Docker image (for all platforms).
 The process is the same for each of the linters. Using ESLint as an example:
 
 ```
-cd eslint 
+cd eslint
 docker build --rm -t cozero/linter-eslint .
 ```
 
-## Running the linters 
+## Running the linters
 
 To run a linter on your project, you'll first need to
 (build the linter image)[#building-the-images] and then, from your project
@@ -57,12 +58,12 @@ at the path `/app` (as per command above).
 ### pylint
 
 One caveat: because of the way Pylint works, both Pylint containers (i.e. for
-Python 2 and for Python 3) need an extra argument to run the linter. The 
+Python 2 and for Python 3) need an extra argument to run the linter. The
 difference is that Pylint requires either a module or package to be specified,
-or a file or directory containing such. 
+or a file or directory containing such.
 
 For example, if your project's base package is called `foo` and there is an
-`__init__.py` file in the subdirectory `foo` off the project root directory, 
+`__init__.py` file in the subdirectory `foo` off the project root directory,
 you would need to invoke the linter thus:
 
 ```
@@ -105,7 +106,7 @@ docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
 
 ## Deployment
 
-Once the images are built, they can be deployed to Docker Hub using the 
+Once the images are built, they can be deployed to Docker Hub using the
 Docker CLI's `docker push`
 (command)[https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html].
 
@@ -120,6 +121,6 @@ Some sense of the actual usefulness of the linters might be a good thing to
 test, too. Maybe the tests could also run the images against an example
 app that should fail all the linters in certain ways. However, the
 disadvantage of such an integration test is that we could end up testing
-the linters themselves - a waste of time because each linter has its own 
+the linters themselves - a waste of time because each linter has its own
 test suite. At least _some_ indication of the utility of the images would
 be useful, though.
