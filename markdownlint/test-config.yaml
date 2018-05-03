@@ -2,7 +2,7 @@ schemaVersion: "2.0.0"
 
 commandTests:
   - name: "markdownlint-cli version"
-    command: "/linter/node_modules/.bin/markdownlint-cli"
+    command: "/linter/node_modules/.bin/markdownlint"
     args: ["-v"]
     expectedOutput: ["0.8.1"]
 
