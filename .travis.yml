@@ -18,7 +18,7 @@ script:
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-haml-lint --config /src/haml-lint/test-config.yaml
   - docker build --rm -t cozero/linter-htmlhint htmlhint
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-htmlhint --config /src/htmlhint/test-config.yaml
-  - docker build --rm -t cozero/linter-htmlhint markdownlint
+  - docker build --rm -t cozero/linter-markdownlint markdownlint
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-markdownlint --config /src/markdownlint/test-config.yaml
   - docker build --rm -t cozero/linter-python2-pylint python2-pylint
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-python2-pylint --config /src/python2-pylint/test-config.yaml
