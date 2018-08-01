@@ -7,7 +7,10 @@ services:
 
 install:
   - wget https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
+<<<<<<< HEAD
   - mv container-structure-test-linux-amd64 container-structure-test
+=======
+>>>>>>> Travis
   - chmod +x container-structure-test
 
 script:
