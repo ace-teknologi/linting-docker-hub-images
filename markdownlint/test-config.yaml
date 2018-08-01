@@ -4,7 +4,7 @@ commandTests:
   - name: "markdownlint version"
     command: "/linter/node_modules/.bin/markdownlint"
     args: ["--version"]
-    expectedOutput: ["0.8.1"]
+    expectedOutput: ["0.11.0"]
 
 fileExistenceTests:
 - name: 'linter script'
