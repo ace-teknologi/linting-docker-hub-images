@@ -1,13 +1,13 @@
 schemaVersion: "2.0.0"
-  
+
 commandTests:
-  - name: "pylint version"
-    command: "pylint"
+  - name: "yamllint version"
+    command: "yamllint"
     args: ["--version"]
-    expectedOutput: ["1.8.2"]
+    expectedOutput: ["1.11.1"]
 
 fileExistenceTests:
 - name: 'linter script'
-  path: '/pylint.sh'
+  path: '/yamllint.sh'
   shouldExist: true
   permissions: '-rwxrwxr-x'
