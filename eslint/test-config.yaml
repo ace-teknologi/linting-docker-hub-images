@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["4.18.1"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/linter/eslint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/linter/eslint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

@@ -1,5 +1,5 @@
 schemaVersion: "2.0.0"
-  
+
 commandTests:
   - name: "haml-lint version"
     command: "haml-lint"
@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["0.27.0"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/haml-lint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/haml-lint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

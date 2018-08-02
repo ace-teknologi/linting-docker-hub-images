@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["0.9.13"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/linter/htmlhint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/linter/htmlhint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

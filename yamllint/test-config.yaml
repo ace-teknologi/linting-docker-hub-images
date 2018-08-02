@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["1.11.1"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/yamllint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/yamllint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

@@ -1,5 +1,5 @@
 schemaVersion: "2.0.0"
-  
+
 commandTests:
   - name: "sass-lint version"
     command: "sass-lint"
@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["1.12.1"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/sass-lint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/sass-lint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

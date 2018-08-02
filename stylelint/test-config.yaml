@@ -7,7 +7,7 @@ commandTests:
     expectedOutput: ["9.1.1"]
 
 fileExistenceTests:
-- name: 'linter script'
-  path: '/linter/stylelint.sh'
-  shouldExist: true
-  permissions: '-rwxrwxr-x'
+  - name: 'linter script'
+    path: '/linter/stylelint.sh'
+    shouldExist: true
+    permissions: '-rwxrwxr-x'

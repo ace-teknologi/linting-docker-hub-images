@@ -11,6 +11,7 @@ ARGS="."
 if [ -e .yamllintrc ] || [ -e yamllintrc ] || [ -e .yamllintrc.yaml ] || [ -e yamllintrc.yaml ]
 then
   echo "--- :yaml: found project config"
+
   if [ -e .yamllintrc ]; then
     CONFIG="-c .yamllintrc"
   fi
@@ -35,6 +36,7 @@ if [ "$#" -gt 0 ]; then
 fi
 
 echo "Let's do this! Linting these files: $ARGS"
+echo "  with config: $CONFIG"
 
 $CMD $CONFIG $ARGS
 
