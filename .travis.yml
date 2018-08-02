@@ -6,7 +6,8 @@ services:
   - docker
 
 install:
-  - wget https://storage.googleapis.com/container-structure-test/latest/container-structure-test
+  - wget https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
+  - mv container-structure-test-linux-amd64 container-structure-test
   - chmod +x container-structure-test
 
 script:
@@ -30,3 +31,5 @@ script:
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-sass-lint --config /src/sass-lint/test-config.yaml
   - docker build --rm -t cozero/linter-stylelint stylelint
   - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-stylelint --config /src/stylelint/test-config.yaml
+  - docker build --rm -t cozero/linter-yamllint yamllint
+  - docker run --rm -i -v ${PWD}:/src:ro -v /var/run/docker.sock:/var/run/docker.sock gcr.io/gcp-runtimes/container-structure-test:v1.1.0 test --image cozero/linter-yamllint --config /src/yamllint/test-config.yaml

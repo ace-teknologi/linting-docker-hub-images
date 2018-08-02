@@ -3,7 +3,13 @@ LABEL maintainer="Josh Mostafa <jmostafa@cozero.com.au>"
 
 ENV HAML_LINT_VERSION=0.27.0
 
-RUN apk add --update bash \
+RUN apk update \
+  && apk add --virtual build-dependencies \
+      build-base \
+      gcc \
+      wget \
+      git \
+  && apk add bash \
   && rm -rf /var/cache/apk/* \
   && gem install haml_lint -v ${HAML_LINT_VERSION}
 

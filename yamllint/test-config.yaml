@@ -1,13 +1,13 @@
 schemaVersion: "2.0.0"
 
 commandTests:
-  - name: "markdownlint version"
-    command: "/linter/node_modules/.bin/markdownlint"
+  - name: "yamllint version"
+    command: "yamllint"
     args: ["--version"]
-    expectedOutput: ["0.11.0"]
+    expectedOutput: ["1.11.1"]
 
 fileExistenceTests:
 - name: 'linter script'
-  path: '/linter/markdownlint.sh'
+  path: '/yamllint.sh'
   shouldExist: true
   permissions: '-rwxrwxr-x'

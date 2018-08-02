@@ -8,9 +8,9 @@ CMD=/linter/node_modules/.bin/markdownlint
 CONFIG=""
 
 if [ -e .markdownlint.json ]; then
-  echo "--- :eslint: found project config"
+  echo "--- :markdown: found project config"
 else
-  echo "--- :eslint: using default config"
+  echo "--- :markdown: using default config"
   CONFIG="-c /linter/.markdownlint.json"
 fi
 

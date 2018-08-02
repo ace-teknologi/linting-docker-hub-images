@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/COzero/linting-docker-hub-images#readme",
   "dependencies": {
-    "markdownlint-cli": "^0.8.1"
+    "markdownlint-cli": "^0.11.0"
   }
 }
