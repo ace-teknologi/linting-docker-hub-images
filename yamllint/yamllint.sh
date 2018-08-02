@@ -11,16 +11,19 @@ ARGS="."
 if [ -e .yamllintrc ] || [ -e yamllintrc ] || [ -e .yamllintrc.yaml ] || [ -e yamllintrc.yaml ]
 then
   echo "--- :yaml: found project config"
-  if [ -e .yamllintrc ] then
+  if [ -e .yamllintrc ]; then
     CONFIG="-c .yamllintrc"
   fi
-  if [ -e yamllintrc ] then
+
+  if [ -e yamllintrc ]; then
     CONFIG="-c yamllintrc"
   fi
-  if [ -e .yamllintrc.yaml ] then
+
+  if [ -e .yamllintrc.yaml ]; then
     CONFIG="-c .yamllintrc.yaml"
   fi
-  if [ -e yamllintrc.yaml ] then
+
+  if [ -e yamllintrc.yaml ]; then
     CONFIG="-c yamllintrc.yaml"
   fi
 else
