@@ -17,7 +17,7 @@ fi
 if [ "$#" -gt 0 ]; then
   ARGS=$@
 else
-  ARGS="/app/*/*.md"
+  ARGS="/app/**/*.md"
 fi
 
 echo "Let's do this! Linting these files: $ARGS"
