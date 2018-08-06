@@ -14,6 +14,7 @@ for the following linters:
 - [![linter-markdownlint build status](https://img.shields.io/docker/build/cozero/linter-markdownlint.svg)](https://hub.docker.com/r/cozero/linter-markdownlint/)  [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [![linter-python2-pylint build status](https://img.shields.io/docker/build/cozero/linter-python2-pylint.svg)](https://hub.docker.com/r/cozero/linter-python2-pylint/)  [PyLint (python2)](https://www.pylint.org)
 - [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
+- [![linter-remark-lint build status](https://img.shields.io/docker/build/cozero/linter-remark-lint.svg)](https://hub.docker.com/r/cozero/linter-remark-lint/)  [remark-lint](https://github.com/remarkjs/remark-lint/)
 - [![linter-rubocop build status](https://img.shields.io/docker/build/cozero/linter-rubocop.svg)](https://hub.docker.com/r/cozero/linter-rubocop/)  [RuboCop](http://batsov.com/rubocop/)
 - [![linter-sass-lint build status](https://img.shields.io/docker/build/cozero/linter-sass-lint.svg)](https://hub.docker.com/r/cozero/linter-sass-lint/)  [Sass Lint](https://www.npmjs.com/package/sass-lint)
 - [![linter-stylelint build status](https://img.shields.io/docker/build/cozero/linter-stylelint.svg)](https://hub.docker.com/r/cozero/linter-stylelint/)  [Stylelint](https://github.com/stylelint/stylelint)
@@ -38,7 +39,7 @@ Docker image (for all platforms).
 
 The process is the same for each of the linters. Using ESLint as an example:
 
-```
+```bash
 cd eslint
 docker build --rm -t cozero/linter-eslint .
 ```
@@ -46,10 +47,10 @@ docker build --rm -t cozero/linter-eslint .
 ## Running the linters
 
 To run a linter on your project, you'll first need to
-(build the linter image)[#building-the-images] and then, from your project
+[build the linter image](#building-the-images) and then, from your project
 root:
 
-```
+```bash
 docker run -v `pwd`:/app cozero/linter-eslint
 ```
 
@@ -67,7 +68,7 @@ For example, if your project's base package is called `foo` and there is an
 `__init__.py` file in the subdirectory `foo` off the project root directory,
 you would need to invoke the linter thus:
 
-```
+```bash
 docker run -v `pwd`:/app cozero/linter-python3-pylint foo
 ```
 
@@ -84,7 +85,7 @@ example:
 If you are on Linux, first ensure that you have installed the Container
 Structure Tests binary to a location on your $PATH. Then:
 
-```
+```bash
 cd eslint
 structure-test -test.v -image cozero/linter-eslint test-config.yaml
 ```
@@ -98,7 +99,7 @@ Docker client so it can run the linter image. These commands work on a Mac
 (note that this has not been tested on Windows, and Linux users should use the
 [Linux instructions](#on-linux) above):
 
-```
+```bash
 cd eslint
 docker run -v `pwd`:/test/ -v /var/run/docker.sock:/var/run/docker.sock \
   gcr.io/gcp-runtimes/container-structure-test -test.v \
@@ -123,5 +124,5 @@ test, too. Maybe the tests could also run the images against an example
 app that should fail all the linters in certain ways. However, the
 disadvantage of such an integration test is that we could end up testing
 the linters themselves - a waste of time because each linter has its own
-test suite. At least _some_ indication of the utility of the images would
+test suite. At least *some* indication of the utility of the images would
 be useful, though.
