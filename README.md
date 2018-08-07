@@ -57,6 +57,17 @@ docker run -v `pwd`:/app cozero/linter-eslint
 Note that all linters expect the project code to be linted to be available
 at the path `/app` (as per command above).
 
+### proselint
+
+[proselint](https://github.com/amperser/proselint/) is a little more basic in
+that it does not support globbed files. You'll need to do that yourself in your
+file. For example:
+
+```bash
+docker run --rm -v $(pwd):/app cozero/linter-proselint README.md
+docker run --rm -v $(pwd):/app cozero/linter-proselint CHANGELOG.md
+```
+
 ### pylint
 
 One caveat: because of the way Pylint works, both Pylint containers (i.e. for

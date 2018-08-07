@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-shopt -s nullglob
-
 echo "--- :scroll: Proselint markdown files"
 
 CMD=/usr/local/bin/proselint
@@ -19,20 +17,16 @@ fi
 if [ "$#" -gt 0 ]; then
   ARGS=($@)
 else
-  ARGS=("/app/**/*.md")
+  ARGS=""
 fi
-
-echo "Let's do this! Linting these files: {$ARGS[@]}"
 
 echo "--"
 
-for f in "{$ARGS[@]}"
-do
-  echo "Proselinting $f"
-  $CMD $CONFIG $f
-  echo "--"
-done
-
-shopt -u nullglob
+if [ -e $ARGS ]; then
+  echo "--- :scroll: found file to lint $ARGS"
+  $CMD $CONFIG $ARGS
+else
+  echo "--- :scroll: no file found"
+fi
 
 echo "👌 LGTM!"
