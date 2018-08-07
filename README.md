@@ -12,6 +12,7 @@ for the following linters:
 - [![linter-haml-lint build status](https://img.shields.io/docker/build/cozero/linter-haml-lint.svg)](https://hub.docker.com/r/cozero/linter-haml-lint/)  [HAML-Lint](https://github.com/brigade/haml-lint)
 - [![linter-html-hint build status](https://img.shields.io/docker/build/cozero/linter-html-hint.svg)](https://hub.docker.com/r/cozero/linter-html-hint/)  [Html Hint](https://github.com/yaniswang/HTMLHint)
 - [![linter-markdownlint build status](https://img.shields.io/docker/build/cozero/linter-markdownlint.svg)](https://hub.docker.com/r/cozero/linter-markdownlint/)  [markdownlint](https://github.com/DavidAnson/markdownlint)
+- [![linter-proselint build status](https://img.shields.io/docker/build/cozero/linter-proselint.svg)](https://hub.docker.com/r/cozero/linter-proselint/)  [proselint](https://github.com/amperser/proselint/)
 - [![linter-python2-pylint build status](https://img.shields.io/docker/build/cozero/linter-python2-pylint.svg)](https://hub.docker.com/r/cozero/linter-python2-pylint/)  [PyLint (python2)](https://www.pylint.org)
 - [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
 - [![linter-rubocop build status](https://img.shields.io/docker/build/cozero/linter-rubocop.svg)](https://hub.docker.com/r/cozero/linter-rubocop/)  [RuboCop](http://batsov.com/rubocop/)
