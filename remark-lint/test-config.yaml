@@ -1,7 +1,7 @@
 schemaVersion: "2.0.0"
 
 commandTests:
-  - name: "markdownlint version"
+  - name: "remark-lint version"
     command: "/linter/node_modules/.bin/remark"
     args: ["-v"]
     expectedOutput: ["5.0.0"]

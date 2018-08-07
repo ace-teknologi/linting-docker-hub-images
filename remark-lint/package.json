@@ -1,7 +1,7 @@
 {
-  "name": "markdownlint-cli",
+  "name": "remark-lint-cli",
   "version": "1.0.0",
-  "description": "Dockerised markdownlint-cli",
+  "description": "Dockerised remark-lint cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
