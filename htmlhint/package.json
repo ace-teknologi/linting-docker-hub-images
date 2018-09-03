@@ -5,8 +5,7 @@
   "author": "jnagel@cozero.com.au",
   "license": "ISC",
   "dependencies": {
-    "htmlhint": "^0.9.13",
-    "lodash": "^4.17.5"
+    "htmlhint": "^0.10.0"
   },
   "repository": {
     "type": "git",
