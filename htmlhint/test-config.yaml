@@ -4,7 +4,7 @@ commandTests:
   - name: "htmlhint version"
     command: "/linter/node_modules/.bin/htmlhint"
     args: ["--version"]
-    expectedOutput: ["0.9.13"]
+    expectedOutput: ["0.10.0"]
 
 fileExistenceTests:
   - name: 'linter script'
