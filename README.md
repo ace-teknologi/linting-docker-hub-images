@@ -12,6 +12,7 @@ for the following linters:
 - [![linter-haml-lint build status](https://img.shields.io/docker/build/cozero/linter-haml-lint.svg)](https://hub.docker.com/r/cozero/linter-haml-lint/)  [HAML-Lint](https://github.com/brigade/haml-lint)
 - [![linter-html-hint build status](https://img.shields.io/docker/build/cozero/linter-html-hint.svg)](https://hub.docker.com/r/cozero/linter-html-hint/)  [Html Hint](https://github.com/yaniswang/HTMLHint)
 - [![linter-markdownlint build status](https://img.shields.io/docker/build/cozero/linter-markdownlint.svg)](https://hub.docker.com/r/cozero/linter-markdownlint/)  [markdownlint](https://github.com/DavidAnson/markdownlint)
+- [![linter-proselint build status](https://img.shields.io/docker/build/cozero/linter-proselint.svg)](https://hub.docker.com/r/cozero/linter-proselint/)  [proselint](https://github.com/amperser/proselint/)
 - [![linter-python2-pylint build status](https://img.shields.io/docker/build/cozero/linter-python2-pylint.svg)](https://hub.docker.com/r/cozero/linter-python2-pylint/)  [PyLint (python2)](https://www.pylint.org)
 - [![linter-python3-pylint build status](https://img.shields.io/docker/build/cozero/linter-python3-pylint.svg)](https://hub.docker.com/r/cozero/linter-python3-pylint/)  [PyLint (python3)](https://www.pylint.org)
 - [![linter-remark-lint build status](https://img.shields.io/docker/build/cozero/linter-remark-lint.svg)](https://hub.docker.com/r/cozero/linter-remark-lint/)  [remark-lint](https://github.com/remarkjs/remark-lint/)
@@ -56,6 +57,17 @@ docker run -v `pwd`:/app cozero/linter-eslint
 
 Note that all linters expect the project code to be linted to be available
 at the path `/app` (as per command above).
+
+### proselint
+
+[proselint](https://github.com/amperser/proselint/) is a little more basic in
+that it does not support globbed files. You'll need to do that yourself in your
+file. For example:
+
+```bash
+docker run --rm -v $(pwd):/app cozero/linter-proselint README.md
+docker run --rm -v $(pwd):/app cozero/linter-proselint CHANGELOG.md
+```
 
 ### pylint
 
