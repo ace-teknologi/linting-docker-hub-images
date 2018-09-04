@@ -1,5 +1,8 @@
 {
   "plugins": [
-    "remark-preset-lint-styleguide"
+    "remark-preset-lint-styleguide",
+    ["remark-lint-list-item-indent", "space"],
+    ["remark-lint-list-item-spacing", "{checkBlanks: true}"],
+    ["remark-lint-unordered-list-marker-style", "consistent"]
   ]
 }

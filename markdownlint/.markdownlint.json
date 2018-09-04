@@ -1,3 +1,5 @@
 {
-  "default": true
+  "default": true,
+  "MD004": { "style": "consistent" },
+  "MD024": { "siblings_only": true, "allow_different_nesting": true }
 }
