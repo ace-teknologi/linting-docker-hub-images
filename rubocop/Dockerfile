@@ -1,7 +1,7 @@
 FROM ruby:2.3-alpine
 LABEL maintainer="Josh Mostafa <jmostafa@cozero.com.au>"
 
-ENV RUBOCOP_VERSION=0.52.1
+ENV RUBOCOP_VERSION=0.64.0
 
 RUN apk add --update bash \
   && rm -rf /var/cache/apk/* \
