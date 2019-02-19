@@ -4,7 +4,7 @@ commandTests:
   - name: "rubocop version"
     command: "rubocop"
     args: ["-v"]
-    expectedOutput: ["0.52.1"]
+    expectedOutput: ["0.64.0"]
 
 fileExistenceTests:
   - name: 'linter script'
